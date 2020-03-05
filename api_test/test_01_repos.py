@@ -6,7 +6,7 @@ def test_list_public_repos(env):
     # print(r.json())
     # print(r.json()[0]["name"])
     assert r.status_code ==200, "status_code should be 200 but actually = {}".format(r)
-    assert r.json()[0].get("id") ==244159746
+    assert r.content[0].get("id") ==245086965
 
 
 def test_create_user_repos(env):
@@ -21,7 +21,7 @@ def test_create_user_repos(env):
 
     }
     r = env.github.repos.create_user_repo(json =data1)
-    print(r.json())
+    print(r)
     assert r.status_code == 201, "这不是201"
 
 
